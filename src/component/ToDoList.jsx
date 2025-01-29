@@ -151,18 +151,20 @@ const ToDoList = () => {
 										<div className=" font-sans col-span-5 text-2xl overflow-x-hidden break-all place-self-start">
 											{event.title.toLowerCase()}
 										</div>
-										<button
-											className="bg-blue-600 py-3 px-4  col-span-1 rounded-lg text-white font-bold hover:bg-blue-800"
-											onClick={() => handleEditClick(event)}
-										>
-											Edit
-										</button>
-										<button
-											className="bg-red-600 rounded-lg py-3 px-2 mr-2 col-span-1 text-white font-bold hover:bg-red-800"
-											onClick={() => handleDeleteClick(event)}
-										>
-											Remove
-										</button>
+										<div className="grid grid-flow-col gap-1">
+											<button
+												className="bg-blue-600 py-3 px-4  col-span-1 rounded-lg text-white font-bold hover:bg-blue-800"
+												onClick={() => handleEditClick(event)}
+											>
+												Edit
+											</button>
+											<button
+												className="bg-red-600 rounded-lg py-3 px-2 mr-2 col-span-1 text-white font-bold hover:bg-red-800"
+												onClick={() => handleDeleteClick(event)}
+											>
+												Remove
+											</button>
+										</div>
 									</div>
 								</>
 							);
@@ -226,9 +228,6 @@ const ToDoList = () => {
 						<h1 className="text-2xl p-4 text-red-600 font-semibold">
 							Are You Sure You wants to Delete All Events You Created !
 						</h1>
-						<div className="my-5 text-green-500 font-semibold text-3xl">
-							{deleteValue.title}
-						</div>
 						<button
 							className="bg-red-600 hover:bg-red-700 text-white font-semibold p-2 px-28 rounded-lg mt-8"
 							onClick={deleteAllModalHandler}
